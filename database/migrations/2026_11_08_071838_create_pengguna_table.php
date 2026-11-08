@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nip')->nullable();
             $table->string('nama_organisasi')->nullable();
             $table->foreignId('fakultas_id')->constrained('fakultas')->restrictOnDelete();
-            $table->foreignId('prodi_id')->constrained('prodi')->restrictOnDelete();
+            $table->foreignId('prodi_id')->nullable()->constrained('prodi')->restrictOnDelete();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('no_hp');

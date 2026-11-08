@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('peminjaman_id')->constrained('peminjaman')->cascadeOnDelete();
             $table->date('tanggal')->index();
             $table->timestamps();
-            $table->unique(['peminjam_id','tanggal']);
+            $table->unique(['peminjaman_id','tanggal']);
         });
     }
 

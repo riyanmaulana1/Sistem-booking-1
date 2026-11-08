@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('no_telepon')->nullable();
             $table->string('status_akun')->default('aktif');
-            $table->boolean('wajib_ganti_password')->default('true');
+            $table->boolean('wajib_ganti_password')->default(true);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -30,8 +30,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        Schema::dropIfExists('instansi');
-    }
+    // public function down(): void
+    // {
+    //     Schema::dropIfExists('instansi');
+    // }
 };

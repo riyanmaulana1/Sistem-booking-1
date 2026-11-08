@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('keputusan')->nullable();
             $table->text('alasan')->nullable();
             $table->timestamp('diputuskan_pada')->nullable();
+            $table->timestamp('diberitahu_pada')->nullable();
             $table->string('nama_pejabat')->nullable();
             $table->string('jabatan_pejabat')->nullable();
             $table->string('nip_pejabat')->nullable();

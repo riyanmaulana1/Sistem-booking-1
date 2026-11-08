@@ -28,7 +28,7 @@ return new class extends Migration
             $table->unsignedInteger('jumlah_peserta_maks');
             $table->string('nama_pembina');
             $table->string('nip_pembina');
-            $table->boolean('acara_universitas')->default("false");
+            $table->boolean('acara_universitas')->default(false);
             $table->string('nama_penanggung_jawab');
             $table->string('nim_penanggung_jawab')->nullable();
             $table->string('nip_penanggung_jawab')->nullable();
