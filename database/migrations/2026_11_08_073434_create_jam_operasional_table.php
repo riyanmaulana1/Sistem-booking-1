@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('jam_operasional', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('ruangan_id')->constrained('ruangan')->cascadeOnDelete();
+            $table->string("hari");
+            $table->time('jam_buka');
+            $table->time('jam_tutup');
             $table->timestamps();
+            $table->unique(['ruangan_id','hari']);
         });
     }
 

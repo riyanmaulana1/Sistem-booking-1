@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('prodi', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('fakultas_id')->constrained('fakultas')->restrictOnDelete();
+            $table->string('nama_prodi');
+            $table->string('jenjang');
             $table->timestamps();
+            $table->unique(['fakultas_id','nama_prodi','jenjang']);
         });
     }
 

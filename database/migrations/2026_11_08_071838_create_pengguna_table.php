@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('pengguna', function (Blueprint $table) {
             $table->id();
+            $table->string('jenis_peminjam');
+            $table->string('nama');
+            $table->string('nim')->nullable();
+            $table->string('nip')->nullable();
+            $table->string('nama_organisasi')->nullable();
+            $table->foreignId('fakultas_id')->constrained('fakultas')->restrictOnDelete();
+            $table->foreignId('prodi_id')->constrained('prodi')->restrictOnDelete();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('no_hp');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

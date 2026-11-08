@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('log_aktifitas', function (Blueprint $table) {
+        Schema::create('log_aktivitas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('peminjaman_id')->constrained('peminjaman')->cascadeOnDelete();
+            $table->string('pelaku_jenis');
+            $table->unsignedBigInteger('pelaku_id')->nullable();
+            $table->string('aksi');
+            $table->text('keterangan');
+            $table->timestamp('waktu')->useCurrent();
         });
     }
 
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('log_aktifitas');
+        Schema::dropIfExists('log_aktivitas');
     }
 };

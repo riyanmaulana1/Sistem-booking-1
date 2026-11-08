@@ -13,7 +13,20 @@ return new class extends Migration
     {
         Schema::create('persetujuan', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('peminjaman_id')->constrained('peminjaman')->cascadeOnDelete();
+            $table->foreignId('instansi_id')->constrained('instansi')->restrictOnDelete();
+            $table->unsignedTinyInteger('urutan');
+            $table->string('keputusan')->nullable();
+            $table->text('alasan')->nullable();
+            $table->timestamp('diputuskan_pada')->nullable();
+            $table->string('nama_pejabat')->nullable();
+            $table->string('jabatan_pejabat')->nullable();
+            $table->string('nip_pejabat')->nullable();
+            $table->string('tempat_surat')->nullable();
+            $table->date('tanggal_surat')->nullable();
+            $table->string('file_surat_persetujuan')->nullable();
             $table->timestamps();
+            $table->unique(['peminjaman_id','urutan']);
         });
     }
 

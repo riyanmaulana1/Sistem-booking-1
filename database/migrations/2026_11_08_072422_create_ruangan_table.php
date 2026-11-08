@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('ruangan', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_ruangan');
+            $table->string('nama_lain')->nullable();
+            $table->string('kode_ruangan');
+            $table->string('kategori_ruangan');
+            $table->string('jenis_ruangan');
+            $table->string('gedung')->nullable();
+            $table->string('lantai')->nullable();
+            $table->unsignedInteger('kapasitas');
+            $table->text('fasilitas')->nullable();
+            $table->string('status_ruangan')->default('aktif');
             $table->timestamps();
         });
     }

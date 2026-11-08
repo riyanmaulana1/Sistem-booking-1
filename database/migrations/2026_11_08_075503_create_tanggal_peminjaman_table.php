@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('tanggal_peminjaman', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('peminjaman_id')->constrained('peminjaman')->cascadeOnDelete();
+            $table->date('tanggal')->index();
             $table->timestamps();
+            $table->unique(['peminjam_id','tanggal']);
         });
     }
 
