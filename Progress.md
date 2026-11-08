@@ -1,6 +1,6 @@
 # PROGRESS: Sistem Booking Ruangan
 
-Terakhir diperbarui: 2026-11-08
+Terakhir diperbarui: 2026-11-09
 Stack: Laravel ^13.17, PHP ^8.3, MySQL/MariaDB, email via Gmail SMTP
 Acuan desain: ERD Draf 2 (12 tabel + token reset password), alur persetujuan bertahap
 
@@ -16,19 +16,19 @@ Acuan desain: ERD Draf 2 (12 tabel + token reset password), alur persetujuan ber
 | Epic                         | Selesai | Total  |
 | ---------------------------- | ------- | ------ |
 | 0 Kartu Terbuka              | 8       | 8      |
-| 1 Setup                      | 2       | 6      |
+| 1 Setup                      | 6       | 6      |
 | 2 Autentikasi                | 0       | 16     |
 | 3 Akun Instansi dan Ruangan  | 0       | 8      |
 | 4 Booking                    | 0       | 10     |
 | 5 Persetujuan dan Notifikasi | 0       | 12     |
 | 6 Admin, Laporan, Log, UI    | 0       | 10     |
 | 7 Pengujian dan Rilis        | 0       | 8      |
-| **Total**                    | **10**  | **78** |
+| **Total**                    | **14**  | **78** |
 
 ## Sedang dikerjakan / berikutnya
 
-- E1-03 migration sesuai ERD, lalu `php artisan migrate:fresh`
-- E1-05 Gmail khusus + app password (langkah manual pemilik proyek)
+- E2-01 tiga guard (admin, instansi, pembooking), lalu E2-02 login admin dan E2-03 login instansi
+- E2-04 daftar pembooking + validasi domain email (syarat terpenuhi)
 
 ## Epic 0: Kartu Terbuka (keputusan desain)
 
@@ -45,14 +45,14 @@ Acuan desain: ERD Draf 2 (12 tabel + token reset password), alur persetujuan ber
 
 ## Epic 1: Setup Proyek dan Database
 
-| ID    | Prio | Tugas                                           | Status         | Commit  |
-| ----- | ---- | ----------------------------------------------- | -------------- | ------- |
-| E1-01 | T    | Install Laravel, buat repository                | Selesai        | 8958e85 |
-| E1-02 | T    | Database MySQL/MariaDB, koneksi `.env`          | Selesai        | 8958e85 |
-| E1-03 | T    | Migration tabel sesuai ERD                      | Siap           |         |
-| E1-04 | T    | Seeder satu akun admin                          | Menunggu E1-03 |         |
-| E1-05 | T    | Gmail khusus, 2-Step Verification, app password | Siap           |         |
-| E1-06 | T    | Konfigurasi SMTP Gmail di `.env`                | Menunggu E1-05 |         |
+| ID    | Prio | Tugas                                           | Status  | Commit  |
+| ----- | ---- | ----------------------------------------------- | ------- | ------- |
+| E1-01 | T    | Install Laravel, buat repository                | Selesai | 8958e85 |
+| E1-02 | T    | Database MySQL/MariaDB, koneksi `.env`          | Selesai | 8958e85 |
+| E1-03 | T    | Migration tabel sesuai ERD                      | Selesai |         |
+| E1-04 | T    | Seeder satu akun admin                          | Selesai |         |
+| E1-05 | T    | Gmail khusus, 2-Step Verification, app password | Selesai |         |
+| E1-06 | T    | Konfigurasi SMTP Gmail di `.env`                | Selesai |         |
 
 ## Epic 2: Autentikasi Tiga Jenis Akun
 
