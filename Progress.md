@@ -45,14 +45,14 @@ Acuan desain: ERD Draf 2 (12 tabel + token reset password), alur persetujuan ber
 
 ## Epic 1: Setup Proyek dan Database
 
-| ID    | Prio | Tugas                                           | Status  | Commit  |
-| ----- | ---- | ----------------------------------------------- | ------- | ------- |
-| E1-01 | T    | Install Laravel, buat repository                | Selesai | 8958e85 |
-| E1-02 | T    | Database MySQL/MariaDB, koneksi `.env`          | Selesai | 8958e85 |
-| E1-03 | T    | Migration tabel sesuai ERD                      | Selesai |         |
-| E1-04 | T    | Seeder satu akun admin                          | Selesai |         |
-| E1-05 | T    | Gmail khusus, 2-Step Verification, app password | Selesai |         |
-| E1-06 | T    | Konfigurasi SMTP Gmail di `.env`                | Selesai |         |
+| ID    | Prio | Tugas                                           | Status  | Commit                    |
+| ----- | ---- | ----------------------------------------------- | ------- | ------------------------- |
+| E1-01 | T    | Install Laravel, buat repository                | Selesai | 8958e85                   |
+| E1-02 | T    | Database MySQL/MariaDB, koneksi `.env`          | Selesai | 8958e85                   |
+| E1-03 | T    | Migration tabel sesuai ERD                      | Selesai | ef58d44, 39c835b, fd866f7 |
+| E1-04 | T    | Seeder satu akun admin                          | Selesai | 1de81ab                   |
+| E1-05 | T    | Gmail khusus, 2-Step Verification, app password | Selesai | 81a8a45                   |
+| E1-06 | T    | Konfigurasi SMTP Gmail di `.env`                | Selesai | 81a8a45                   |
 
 ## Epic 2: Autentikasi Tiga Jenis Akun
 

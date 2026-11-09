@@ -1,7 +1,8 @@
 <?php
 
-use App\Models\User;
-
+use App\Models\Admin;
+use App\Models\Instansi;
+use App\Models\Pengguna;
 return [
 
     /*
@@ -16,8 +17,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => env('AUTH_GUARD', 'web'),
-        'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
+        'guard' => env('AUTH_GUARD', 'pengguna'),
+        'passwords' => env('AUTH_PASSWORD_BROKER', 'pengguna'),
     ],
 
     /*
@@ -38,9 +39,17 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'admin',
+        ],
+        'instansi'=>[
+            'driver'=>'session',
+            'provider'=> 'instansi',
+        ],
+        'pengguna'=>[
+            'driver'=>'session',
+            'provider'=> 'pengguna',
         ],
     ],
 
@@ -62,10 +71,18 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'admin' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', User::class),
+            'model' => env('AUTH_MODEL', Admin::class),
         ],
+        'instansi'=>[
+            'driver'=>'eloquent',
+            'model'=> Instansi::class,
+            ],
+        'pengguna'=>[
+            'driver'=>'eloquent',
+            'model'=> Pengguna::class,
+            ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -93,12 +110,18 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'instansi' => [
+            'provider' => 'instansi',
             'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
             'expire' => 60,
             'throttle' => 60,
         ],
+        'pengguna'=>[
+            'provider'=>'pengguna',
+            'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+            'expire' => 60,
+            'throttle' =>60,
+            ],
     ],
 
     /*
